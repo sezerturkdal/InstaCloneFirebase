@@ -9,13 +9,19 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
     }
-
-
+    @IBAction func SignInClicked(_ sender: Any) {
+    }
+    
+    @IBAction func SignUpClicked(_ sender: Any) {
+    }
+    
 }
 
