@@ -8,10 +8,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Settings-->
+        <scene sceneID="li7-6D-k3K">
+            <objects>
+                <viewController id="UC2-Le-yGX" customClass="SettingsViewController" customModule="InstaCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NbV-Un-NoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9Z-9o-gr8">
+                                <rect key="frame" x="95" y="379" width="200" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="LogoutClicked:" destination="UC2-Le-yGX" eventType="touchUpInside" id="tEx-a5-yxt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dYj-uH-agj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.2" catalog="system" id="ekd-wX-WYk"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" id="8OS-if-k6P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hc8-EN-KQS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-495.38461538461536" y="1048.5781990521327"/>
+        </scene>
         <!--Upload-->
         <scene sceneID="8hp-Jp-7z4">
             <objects>
-                <viewController id="Evd-Gl-biY" sceneMemberID="viewController">
+                <viewController id="Evd-Gl-biY" customClass="UploadViewController" customModule="InstaCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SgC-SV-2aq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +57,7 @@
         <!--Feed-->
         <scene sceneID="wMt-oK-gST">
             <objects>
-                <viewController id="WtL-E3-LS9" sceneMemberID="viewController">
+                <viewController id="WtL-E3-LS9" customClass="FeedViewController" customModule="InstaCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LQA-tN-Hw1">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +83,7 @@
                     <connections>
                         <segue destination="WtL-E3-LS9" kind="relationship" relationship="viewControllers" id="Nuw-KO-Pkr"/>
                         <segue destination="Evd-Gl-biY" kind="relationship" relationship="viewControllers" id="iDD-Y5-vwX"/>
+                        <segue destination="UC2-Le-yGX" kind="relationship" relationship="viewControllers" id="07c-1T-abW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuk-yB-C2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -108,6 +139,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mRa-th-BnE"/>
                     <connections>
                         <outlet property="txtEmail" destination="rOB-kW-nUF" id="9VV-6O-izj"/>
                         <outlet property="txtPassword" destination="QHD-Zh-36d" id="rgN-Th-7ld"/>
@@ -121,6 +153,7 @@
     </scenes>
     <resources>
         <image name="arrow.up.doc" catalog="system" width="115" height="128"/>
+        <image name="gearshape.2" catalog="system" width="128" height="101"/>
         <image name="globe.europe.africa.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
