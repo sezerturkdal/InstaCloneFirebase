@@ -73,7 +73,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Ve7-to-XiC">
             <objects>
-                <tabBarController id="MP3-zg-pg3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="MP3-zg-pg3" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="YCC-K6-zFa"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rs3-AE-94h">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>

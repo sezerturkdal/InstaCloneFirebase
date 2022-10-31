@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
     }
     @IBAction func SignInClicked(_ sender: Any) {
@@ -22,7 +21,7 @@ class ViewController: UIViewController {
             if error != nil {
                 self.showAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "When signing in some errors occurred")
             }else{
-                self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                self.gotoFeedScreen()
             }
         }
     }
@@ -33,7 +32,7 @@ class ViewController: UIViewController {
                 if error != nil {
                     self.showAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "When signing up some errors occurred")
                 }else{
-                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                    self.gotoFeedScreen()
                 }
                 
             }
@@ -48,6 +47,10 @@ class ViewController: UIViewController {
          let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
          alert.addAction(okButton)
          self.present(alert, animated: true)
+    }
+    
+    func gotoFeedScreen(){
+        performSegue(withIdentifier: "toFeedVC", sender: nil)
     }
     
 }
