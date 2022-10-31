@@ -18,10 +18,36 @@ class ViewController: UIViewController {
         
     }
     @IBAction func SignInClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toFeedVC", sender: nil)
+        Auth.auth().signIn(withEmail: txtEmail.text ?? "", password: txtPassword.text ?? ""){(authData,error) in
+            if error != nil {
+                self.showAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "When signing in some errors occurred")
+            }else{
+                self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+            }
+        }
     }
     
     @IBAction func SignUpClicked(_ sender: Any) {
+        if txtEmail.text != "" && txtPassword.text != ""{
+            Auth.auth().createUser(withEmail: txtEmail.text ?? "", password: txtPassword.text ?? ""){(authData,error) in
+                if error != nil {
+                    self.showAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "When signing up some errors occurred")
+                }else{
+                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                }
+                
+            }
+        }else{
+          showAlert(titleInput: "Error", messageInput: "Fill the blanks")
+        }
+       
+    }
+    
+    func showAlert(titleInput:String, messageInput:String){
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+         alert.addAction(okButton)
+         self.present(alert, animated: true)
     }
     
 }
