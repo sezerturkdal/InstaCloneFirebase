@@ -45,14 +45,55 @@
                     <view key="view" contentMode="scaleToFill" id="SgC-SV-2aq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadImage" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-em-ZOQ">
+                                <rect key="frame" x="16" y="107" width="358" height="262"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEt-eV-svk">
+                                <rect key="frame" x="16" y="439" width="358" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="ZQB-Sj-3BQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlw-Bl-5MM">
+                                <rect key="frame" x="110" y="547" width="170" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="GaH-yd-dc3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Share"/>
+                                <connections>
+                                    <action selector="ShareClicked:" destination="Evd-Gl-biY" eventType="touchUpInside" id="prt-wQ-H9c"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zkB-Wm-Fef"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hAq-em-ZOQ" firstAttribute="leading" secondItem="SgC-SV-2aq" secondAttribute="leadingMargin" id="4A5-BG-ZRx"/>
+                            <constraint firstItem="CEt-eV-svk" firstAttribute="centerX" secondItem="Dlw-Bl-5MM" secondAttribute="centerX" id="9Lh-Bw-Rg2"/>
+                            <constraint firstItem="Dlw-Bl-5MM" firstAttribute="top" secondItem="CEt-eV-svk" secondAttribute="bottom" constant="74" id="AaN-Og-8rj"/>
+                            <constraint firstItem="hAq-em-ZOQ" firstAttribute="trailing" secondItem="CEt-eV-svk" secondAttribute="trailing" id="NhR-ZB-hQO"/>
+                            <constraint firstItem="hAq-em-ZOQ" firstAttribute="trailing" secondItem="SgC-SV-2aq" secondAttribute="trailingMargin" id="ZzC-DK-HEN"/>
+                            <constraint firstItem="hAq-em-ZOQ" firstAttribute="leading" secondItem="CEt-eV-svk" secondAttribute="leading" id="fPA-Ma-hbI"/>
+                            <constraint firstItem="zkB-Wm-Fef" firstAttribute="bottom" secondItem="Dlw-Bl-5MM" secondAttribute="bottom" constant="125" id="g5T-tr-Job"/>
+                            <constraint firstItem="hAq-em-ZOQ" firstAttribute="top" secondItem="zkB-Wm-Fef" secondAttribute="top" constant="60" id="l3l-cd-9X3"/>
+                            <constraint firstItem="Dlw-Bl-5MM" firstAttribute="leading" secondItem="zkB-Wm-Fef" secondAttribute="leading" constant="110" id="mGM-1p-S6G"/>
+                            <constraint firstItem="CEt-eV-svk" firstAttribute="top" secondItem="hAq-em-ZOQ" secondAttribute="bottom" constant="70" id="qSA-UF-WEo"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="arrow.up.doc" catalog="system" id="miX-ok-DuM"/>
+                    <connections>
+                        <outlet property="btnUpload" destination="Dlw-Bl-5MM" id="edH-Fh-jd9"/>
+                        <outlet property="imgUpload" destination="hAq-em-ZOQ" id="AP3-HP-Hhc"/>
+                        <outlet property="txtComment" destination="CEt-eV-svk" id="aXt-1b-71f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Yn-Xf-lK9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-494" y="356"/>
+            <point key="canvasLocation" x="-495.38461538461536" y="354.73933649289097"/>
         </scene>
         <!--Feed-->
         <scene sceneID="wMt-oK-gST">
@@ -155,6 +196,7 @@
         <image name="arrow.up.doc" catalog="system" width="115" height="128"/>
         <image name="gearshape.2" catalog="system" width="128" height="101"/>
         <image name="globe.europe.africa.fill" catalog="system" width="128" height="123"/>
+        <image name="uploadImage" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

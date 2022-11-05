@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>You must select the photo to be uploaded from your phone</string>
 </dict>
 </plist>
